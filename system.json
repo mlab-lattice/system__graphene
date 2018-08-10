@@ -1,10 +1,10 @@
 {
   "type": "v1/system",
-  "description": "Hosted Lattice",
 
   "components": {
     "api": {
       "type": "v1/service",
+      "description": "Private service",
 
       "ports": {
         "80": {
