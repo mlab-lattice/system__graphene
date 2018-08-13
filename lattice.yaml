@@ -1,0 +1,39 @@
+---
+type: v1/system
+
+node_pools:
+  main:
+    instance_type: t2.small
+    num_instances: 2
+
+components:
+  api:
+    type: v1/service
+    description: Backend API for Petflix app
+
+    ports:
+      "80":
+        protocol: HTTP
+        external_access:
+          public: true
+
+
+    build:
+      type: command_build
+
+      base_image:
+        repository: library/node
+        tag: carbon
+      command:
+      - "cd private && npm install"
+
+    exec:
+      command:
+      - node
+      - private/lib/index.js
+      environment:
+        LATTICE_CORE_DB_URI: {"secret": "/:core-db-uri"}
+        LATTICE_AUDIT_DB_URI: {"secret": "/:audit-db-uri"}
+        LATTICE_PAGERDUTY_ROUTING_KEY: {"secret": "/:pagerduty-routing-key"}
+        LATTICE_SENDGRID_API_KEY: {"secret": "sendgrid-api-key"}
+        LATTICE_EXTERNAL_ADDRESS: "https://staging.lattice.mlab.com"
