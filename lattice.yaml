@@ -32,8 +32,8 @@ components:
       - node
       - private/lib/index.js
       environment:
-        LATTICE_CORE_DB_URI: {"$secret_ref": "/:core-db-uri"}
-        LATTICE_AUDIT_DB_URI: {"$secret_ref": "/:audit-db-uri"}
-        LATTICE_PAGERDUTY_ROUTING_KEY: {"$secret_ref": "/:pagerduty-routing-key"}
-        LATTICE_SENDGRID_API_KEY: {"$secret_ref": "sendgrid-api-key"}
+        LATTICE_CORE_DB_URI: "xxx"
+        LATTICE_AUDIT_DB_URI: "xxx"
+        LATTICE_PAGERDUTY_ROUTING_KEY: "xxx"
+        LATTICE_SENDGRID_API_KEY: "xxx"
         LATTICE_EXTERNAL_ADDRESS: "https://staging.lattice.mlab.com"
