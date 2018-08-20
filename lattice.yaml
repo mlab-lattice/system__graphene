@@ -20,7 +20,7 @@ components:
 
     build:
       type: command_build
-
+      source: "https://github.com/mlab-lattice/api-services"
       base_image:
         repository: library/node
         tag: carbon
