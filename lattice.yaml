@@ -25,7 +25,7 @@ components:
         repository: library/node
         tag: carbon
       command:
-      - "cd private && npm install"
+      - "ls -al && cd private && npm install"
 
     exec:
       command:
