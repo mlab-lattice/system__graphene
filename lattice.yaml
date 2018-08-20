@@ -22,7 +22,7 @@ components:
       type: command_build
       source:
         git_repository:
-          url: "ssh://git@github.com:mlab-lattice/api-services.git"
+          url: "git@github.com:mlab-lattice/api-services.git"
           branch: "master"
           ssh_key: "/:git-ssh-key"
       base_image:
