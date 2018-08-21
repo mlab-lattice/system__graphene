@@ -9,7 +9,7 @@ node_pools:
 components:
   api:
     type: v1/service
-    description: Backend API for Petflix app
+    description: Private API
 
     ports:
       "80":
