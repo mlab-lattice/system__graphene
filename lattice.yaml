@@ -41,3 +41,6 @@ components:
         LATTICE_PAGERDUTY_ROUTING_KEY: {"$secret": "pagerduty-routing-key"}
         LATTICE_SENDGRID_API_KEY: {"$secret": "sendgrid-api-key"}
         LATTICE_EXTERNAL_ADDRESS: "https://staging.lattice.mlab.com"
+
+    node_pool: /:main
+    num_instances: 1
