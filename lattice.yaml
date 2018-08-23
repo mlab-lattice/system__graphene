@@ -24,7 +24,7 @@ components:
         git_repository:
           url: "git@github.com:mlab-lattice/api-services.git"
           branch: "master"
-          ssh_key: "/:git-ssh-key"
+          ssh_key: {"$secret": "/:git-ssh-key"}
       base_image:
         repository: library/node
         tag: carbon
@@ -36,6 +36,10 @@ components:
       - node
       - private/lib/index.js
       environment:
+        LATTICE_CORE_DB_URI: {"$secret": "core-db-uri"}
+        LATTICE_AUDIT_DB_URI: {"$secret": "audit-db-uri"}
+        LATTICE_PAGERDUTY_ROUTING_KEY: {"$secret": "pagerduty-routing-key"}
+        LATTICE_SENDGRID_API_KEY: {"$secret": "sendgrid-api-key"}
         LATTICE_EXTERNAL_ADDRESS: "https://staging.lattice.mlab.com"
 
     node_pool: /:main
