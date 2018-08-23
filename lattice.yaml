@@ -24,7 +24,7 @@ components:
         git_repository:
           url: "git@github.com:mlab-lattice/api-services.git"
           branch: "master"
-          ssh_key: {"$secret": "/:git-ssh-key"}
+          ssh_key: {"$secret": "git-ssh-key"}
       base_image:
         repository: library/node
         tag: carbon
