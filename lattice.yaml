@@ -29,7 +29,7 @@ components:
         repository: library/node
         tag: carbon
       command:
-      - "npm install"
+      - "npm install --unsafe-perm"
 
     exec:
       command:
