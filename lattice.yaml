@@ -7,7 +7,7 @@ node_pools:
     num_instances: 2
 
 components:
-  api:
+  private:
     type: v1/service
     description: Private API
 
@@ -41,6 +41,8 @@ components:
         LATTICE_PAGERDUTY_ROUTING_KEY: {"$secret": "pagerduty-routing-key"}
         LATTICE_SENDGRID_API_KEY: {"$secret": "sendgrid-api-key"}
         LATTICE_EXTERNAL_ADDRESS: "https://staging.lattice.mlab.com"
+        LATTICE_K8S_UTIL_VERSION: '0.1.22'
+        LATTICE_K8S_UTIL_ENVIRONMENT: 'staging'
 
     node_pool: /:main
     num_instances: 1
