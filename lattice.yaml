@@ -84,8 +84,7 @@ components:
         LATTICE_PAGERDUTY_ROUTING_KEY: {"$secret": "pagerduty-routing-key"}
         LATTICE_MANAGEMENT_KEY_ID: {"$secret": "management-key-id"}
         LATTICE_MANAGEMENT_KEY_SECRET: {"$secret": "management-key-secret"}
-        LATTICE_MANAGEMENT_KEY_SECRET: {"$secret": "management-key-secret"}
-        LATTICE_PUBLIC_MONITORING_PORT: 5050
+        LATTICE_PUBLIC_MONITORING_PORT: "5050"
 
     node_pool: /:main
     num_instances: 1
