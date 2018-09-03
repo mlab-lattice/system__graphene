@@ -89,3 +89,43 @@ components:
     node_pool: /:main
     num_instances: 1
 
+  frontend:
+    type: v1/service
+    description: Front End
+
+    ports:
+      "8080":
+        protocol: HTTP
+        external_access:
+          public: true
+
+    build:
+      type: command_build
+      source:
+        git_repository:
+          url: "git@github.com:mlab-lattice/api-services.git"
+          branch: "master"
+          ssh_key: {"$secret": "git-ssh-key"}
+      base_image:
+        repository: library/node
+        tag: carbon
+      command:
+      - "npm install --unsafe-perm && npm run build-front-end"
+
+    exec:
+      command:
+      - node
+      - front-end/index.js
+      environment:
+        LATTICE_CLI_S3_BUCKET: 'https://s3-us-east-2.amazonaws.com/lattice-binaries-staging'
+        LATTICE_CLI_VERSION_URI: 'https://s3-us-west-2.amazonaws.com/lattice-component-current-versions/cli-git.txt'
+        LATTICE_CLI_BREW_FORMULA: 'mlab-lattice/lattice/lattice-cli-git'
+        LATTICE_PRIVATE_SERVICE_ADDRESS: 'http://private.local:8200'
+        LATTICE_PRIVATE_SERVICE_ADDRESS: 'http://public.local:8201'
+        LATTICE_MANAGEMENT_KEY_ID: {"$secret": "management-key-id"}
+        LATTICE_MANAGEMENT_KEY_SECRET: {"$secret": "management-key-secret"}
+        LATTICE_FRONTEND_DB_URI: {"$secret": "frontend-db-uri"}
+        LATTICE_PAGERDUTY_ROUTING_KEY: {"$secret": "pagerduty-routing-key"}
+
+    node_pool: /:main
+    num_instances: 1
