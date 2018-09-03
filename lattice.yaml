@@ -121,7 +121,7 @@ components:
         LATTICE_CLI_VERSION_URI: 'https://s3-us-west-2.amazonaws.com/lattice-component-current-versions/cli-git.txt'
         LATTICE_CLI_BREW_FORMULA: 'mlab-lattice/lattice/lattice-cli-git'
         LATTICE_PRIVATE_SERVICE_ADDRESS: 'http://private.local:8200'
-        LATTICE_PRIVATE_SERVICE_ADDRESS: 'http://public.local:8201'
+        LATTICE_PUBLIC_SERVICE_ADDRESS: 'http://public.local:8201'
         LATTICE_MANAGEMENT_KEY_ID: {"$secret": "management-key-id"}
         LATTICE_MANAGEMENT_KEY_SECRET: {"$secret": "management-key-secret"}
         LATTICE_FRONTEND_DB_URI: {"$secret": "frontend-db-uri"}
