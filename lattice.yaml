@@ -29,12 +29,12 @@ components:
         repository: library/node
         tag: carbon
       command:
-      - "npm install --unsafe-perm && npm run build-front-end"
+        - "npm install --unsafe-perm && npm run build-front-end"
 
     exec:
       command:
-      - node
-      - private/lib/index.js
+        - node
+        - private/lib/index.js
       environment:
         LATTICE_CORE_DB_URI: {"$secret": "core-db-uri"}
         LATTICE_AUDIT_DB_URI: {"$secret": "audit-db-uri"}
@@ -72,12 +72,12 @@ components:
         repository: library/node
         tag: carbon
       command:
-      - "npm install --unsafe-perm && npm run build-front-end"
+        - "npm install --unsafe-perm && npm run build-front-end"
 
     exec:
       command:
-      - node
-      - public/lib/index.js
+        - node
+        - public/lib/index.js
       environment:
         LATTICE_PRIVATE_SERVICE_ADDRESS: 'http://private.local:8200'
         LATTICE_AUDIT_DB_URI: {"$secret": "audit-db-uri"}
@@ -110,12 +110,12 @@ components:
         repository: library/node
         tag: carbon
       command:
-      - "npm install --unsafe-perm && npm run build-front-end"
+        - "npm install --unsafe-perm && npm run build-front-end"
 
     exec:
       command:
-      - node
-      - front-end/index.js
+        - node
+        - front-end/index.js
       environment:
         LATTICE_CLI_S3_BUCKET: 'https://s3-us-east-2.amazonaws.com/lattice-binaries-staging'
         LATTICE_CLI_VERSION_URI: 'https://s3-us-west-2.amazonaws.com/lattice-component-current-versions/cli-git.txt'
