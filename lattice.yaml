@@ -150,4 +150,4 @@ components:
       command:
         - "true"
 
-      node_pool: /:main
+    node_pool: /:main
