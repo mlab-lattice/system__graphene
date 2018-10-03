@@ -7,7 +7,7 @@ image_resource:
     tag: '4'
 inputs:
   - name: system-definition-repo
-  # - name: build
+  - name: linux-latticectl-binary
 run:
   path: system-definition-repo/ci/deploy-new-lattice-system.sh
 params:
