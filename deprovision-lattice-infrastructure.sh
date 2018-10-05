@@ -18,7 +18,7 @@ docker pull $IMAGE_URI
 docker run -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY $IMAGE_URI:latest destroy \
   --id lattice-staging-app \
   --cloud-provider AWS \
-  --api-auth-key $(cat ./infrastructure-bearer-token.txt) \
+  --bearer-token $(cat ./infrastructure-bearer-token.txt) \
   --cloud-provider-var=region=us-east-2 \
   --cloud-provider-var=terraform-backend-s3-bucket=laas.dev.staging \
   --cloud-provider-var=terraform-backend-s3-key=lattices.lattice-staging-app/terraform/terraform.tfstate \

@@ -19,7 +19,7 @@ docker run -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY $IMAGE_URI:latest creat
   --id lattice-staging-app \
   --container-channel gcr.io/lattice-dev/laas/staging \
   --cloud-provider AWS \
-  --api-auth-key $(cat ./infrastructure-bearer-token.txt) \
+  --bearer-token $(cat ./infrastructure-bearer-token.txt) \
   --cloud-provider-var=master-node-instance-type=t2.medium \
   --cloud-provider-var=account-id=161545394894 \
   --cloud-provider-var=key-name=lattice-kp-us-east-2 \

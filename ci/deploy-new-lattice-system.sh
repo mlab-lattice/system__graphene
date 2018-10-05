@@ -10,10 +10,9 @@ cat <<EOT >> config.json
   "currentContext": "c",
   "contexts": {
     "c": {
-      "lattice": "$INFRASTRUCTURE_ADDRESS",
+      "url": "$INFRASTRUCTURE_ADDRESS",
       "auth": {
-        "legacyApiKey": "$INFRASTRUCTURE_BEARER_TOKEN",
-        "bearerToken": null
+        "bearerToken": "$INFRASTRUCTURE_BEARER_TOKEN"
       }
     }
   }
