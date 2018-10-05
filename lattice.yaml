@@ -41,8 +41,8 @@ components:
         LATTICE_PAGERDUTY_ROUTING_KEY: {"$secret": "pagerduty-routing-key"}
         LATTICE_SENDGRID_API_KEY: {"$secret": "sendgrid-api-key"}
         LATTICE_EXTERNAL_ADDRESS: "https://staging.lattice.mlab.com"
-        LATTICE_K8S_UTIL_VERSION: '0.1.22'
-        LATTICE_K8S_UTIL_ENVIRONMENT: 'staging'
+        LATTICE_K8S_VERSION_URL: "https://s3-us-west-2.amazonaws.com/lattice-component-current-versions/linux_k8s_util"
+        LATTICE_K8S_UTIL_ENVIRONMENT: "staging"
 
     node_pool: /:main
     num_instances: 1
@@ -126,6 +126,7 @@ components:
         LATTICE_MANAGEMENT_KEY_SECRET: {"$secret": "management-key-secret"}
         LATTICE_FRONTEND_DB_URI: {"$secret": "frontend-db-uri"}
         LATTICE_PAGERDUTY_ROUTING_KEY: {"$secret": "pagerduty-routing-key"}
+        LATTICE_AUDIT_DB_URI: {"$secret": "audit-db-uri"}
 
     node_pool: /:main
     num_instances: 1
