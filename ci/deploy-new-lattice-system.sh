@@ -22,4 +22,4 @@ EOT
 cp linux-latticectl-binary/latticectl_* latticectl
 chmod +x latticectl
 
-./latticectl deploy --system infrastructure --version $(cat ./system-definition-repo/.git/ref) --config config.json
+./latticectl deploy --system infra --version $(cat ./system-definition-repo/.git/ref) --config config.json
